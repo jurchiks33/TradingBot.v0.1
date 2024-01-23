@@ -21,15 +21,20 @@ def create_main_window():
 
     #Main frame.
     main_frame = ttk.Frame(root, padding="10")
-    main_frame.grid(row=0, column=0, sticky=(tk.W,
-                    tk.E, tk.N, tk.S))
+    main_frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
     main_frame.rowconfigure(0, weight=1)
     main_frame.columnconfigure(0, weight=1)
+    main_frame.columnconfigure(1, weight=1)
+    main_frame.columnconfigure(2, weight=1)
+    main_frame.columnconfigure(3, weight=1)
 
     #Chart Area.
-    
-    chart_label = ttk.Label(main_frame, text="Chart Area", 
-                            background="gray", foreground="white")
+    chart_frame = ttk.Frame(main_frame, borderwidth=2, relief="sunken")
+    chart_frame.grid(row=0, column=1, columnspan=2, pady=5, padx=5, sticky="nsew")
+    chart_frame.grid_propagate(False)
+    chart_frame.config(width=window_width*0.7, height=window_height*0.5)
+    chart_label = ttk.Label(chart_frame, text="Chart Area", background="lightgray")
+    chart_label.place(relx=0.5, rely=0.5, anchor="center")
 
     #Control Buttons.
     start_button = ttk.Button(main_frame, text="Start")
