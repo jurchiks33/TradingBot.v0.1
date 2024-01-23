@@ -23,8 +23,11 @@ def create_main_window():
     main_frame = ttk.Frame(root, padding="10")
     main_frame.grid(row=0, column=0, sticky=(tk.W,
                     tk.E, tk.N, tk.S))
+    main_frame.rowconfigure(0, weight=1)
+    main_frame.columnconfigure(0, weight=1)
 
     #Chart Area.
+    
     chart_label = ttk.Label(main_frame, text="Chart Area", 
                             background="gray", foreground="white")
 
