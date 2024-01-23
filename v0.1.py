@@ -1,6 +1,15 @@
 import tkinter as tk
 from tkinter import ttk
 
+import display
+
+def main():
+    window = display.create_main_window()
+    window.mainloop()
+
+if __name__ == "__main__":
+    main()
+
 #Main window.
 root = tk.Tk()
 root.title("Trading Bot")
