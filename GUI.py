@@ -19,10 +19,6 @@ def create_main_window():
 
     root.geometry(f'{window_width}x{window_height}+{center_x}+{center_y}')
 
-    #Main window.
-    root = tk.Tk()
-    root.title("Trading Bot")
-
     #Main frame.
     main_frame = ttk.Frame(root, padding="10")
     main_frame.grid(row=0, column=0, sticky=(tk.W,
