@@ -31,6 +31,11 @@ log_label = ttk.Label(main_frame, text="Log Section",
 log_label.grid(row=2, column=0, columnspan=4, 
                sticky=(tk.W, tk.E, tk.N, tk.S), pady=5)
 
+#Status information.
+status_label = ttk.Label(main_frame, 
+                         text="Balance: $xxxxx | Open Positions: xx | Recent Trades: xxx")
+status_label.grid(row=3, column=0, columnspan=4)
 
+root.mainloop()
                         
 
