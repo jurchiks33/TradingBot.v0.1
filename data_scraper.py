@@ -9,3 +9,5 @@ def get_historical_data(ticker_symbol, period="id", intervals="1m"):
     :param interval: Data interval (default is '1m').
     :return: DataFrame with historical market data.
     """
+    data = yf.download(ticker_symbol, period=period, interval=interval)
+    return data
