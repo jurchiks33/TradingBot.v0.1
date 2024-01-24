@@ -24,10 +24,12 @@ def create_main_window(crypto_data):
     main_frame = ttk.Frame(root, padding="10")
     main_frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
     main_frame.rowconfigure(0, weight=1)
-    main_frame.columnconfigure(0, weight=1)
-    main_frame.columnconfigure(1, weight=1)
-    main_frame.columnconfigure(2, weight=1)
-    main_frame.columnconfigure(3, weight=1)
+    for i in range(4):
+        main_frame.columnconfigure(i, weight=1)
+    # main_frame.columnconfigure(0, weight=1)
+    # main_frame.columnconfigure(1, weight=1)
+    # main_frame.columnconfigure(2, weight=1)
+    # main_frame.columnconfigure(3, weight=1)
 
     #Chart Area.
     chart_frame = ttk.Frame(main_frame, borderwidth=2, relief="sunken")
@@ -37,7 +39,7 @@ def create_main_window(crypto_data):
     chart_width = int(window_width * 0.7)
     chart_height = int(window_height * 0.5)
 
-    chart_canvas = create_chart_frame(chart_frame, crypto_data,
+    create_chart_frame(chart_frame, crypto_data,
                                       chart_width, chart_height)
 
     # chart_frame.config(width=window_width*0.7, height=window_height*0.5)
