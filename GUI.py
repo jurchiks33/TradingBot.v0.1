@@ -1,7 +1,8 @@
 import tkinter as tk
 from tkinter import ttk
+from chart_plotter import create_chart_frame
 
-def create_main_window():
+def create_main_window(crypto_data):
     root = tk.Tk()
     root.title("Trading Bot")
 
@@ -32,9 +33,16 @@ def create_main_window():
     chart_frame = ttk.Frame(main_frame, borderwidth=2, relief="sunken")
     chart_frame.grid(row=0, column=1, columnspan=2, pady=5, padx=5, sticky="nsew")
     chart_frame.grid_propagate(False)
-    chart_frame.config(width=window_width*0.7, height=window_height*0.5)
-    chart_label = ttk.Label(chart_frame, text="Chart Area", background="lightgray")
-    chart_label.place(relx=0.5, rely=0.5, anchor="center")
+
+    chart_width = int(window_width * 0.7)
+    chart_height = int(window_height * 0.5)
+
+    chart_canvas = create_chart_frame(chart_frame, crypto_data,
+                                      chart_width, chart_height)
+
+    # chart_frame.config(width=window_width*0.7, height=window_height*0.5)
+    # chart_label = ttk.Label(chart_frame, text="Chart Area", background="lightgray")
+    # chart_label.place(relx=0.5, rely=0.5, anchor="center")
 
     #Control Buttons.
     start_button = ttk.Button(main_frame, text="Start")
