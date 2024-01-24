@@ -1,6 +1,6 @@
 import yfinance as yf
 
-def get_historical_data(ticker_symbol, period="id", intervals="1m"):
+def fetch_crypto_data(ticker_symbol, period="id", interval="1m"):
     """
     Fetches historical market data for the given cryptocurrency ticker symbol from Yahoo Finance.
     
