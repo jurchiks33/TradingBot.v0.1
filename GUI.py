@@ -55,6 +55,14 @@ def create_main_window(crypto_data, crypto_pairs):
     scrollbar.pack(side="right", fill="y")
     listbox.pack(side="left", fill="both", expand=True)
 
+    #populate listbox with crypto pairs.
+    for pair in crypto_pairs:
+        listbox.insert(tk.END, pair)
+    
+    #Binding selected event to the listbox.
+    listbox.bind('<<ListboxSelect>>', lambda event: update_chart_frame_selection(event, listbox,
+                                                                                 chart_frame))
+
     #Chart Area.
     chart_frame = ttk.Frame(main_frame, borderwidth=2, relief="sunken")
     chart_frame.grid(row=0, column=1, columnspan=2, pady=5, padx=5, sticky="nsew")
