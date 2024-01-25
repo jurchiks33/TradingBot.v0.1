@@ -48,7 +48,12 @@ def create_main_window(crypto_data, crypto_pairs):
     listbox_frame.grid(row=0, column=4, rowspan=4, sticky='nsew', padx=(5, 0))
     main_frame.columnconfigure(4, weight=1)
 
-    
+    scrollbar = Scrollbar(listbox_frame, orient="vertical")
+    listbox = Listbox(listbox_frame, yscrollcommand=Scrollbar.set,
+                      selectmode=SINGLE)
+    scrollbar.config(command=listbox.yview)
+    scrollbar.pack(side="right", fill="y")
+    listbox.pack(side="left", fill="both", expand=True)
 
     #Chart Area.
     chart_frame = ttk.Frame(main_frame, borderwidth=2, relief="sunken")
