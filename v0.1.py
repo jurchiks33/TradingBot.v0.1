@@ -27,7 +27,12 @@ def main():
         'TRX-USD'     # TRON
     ]
 
-    window = GUI.create_main_window(btc_data)
+    #Fetching data for the first pair.
+    initial_pair = crypto_pairs[0]
+    initial_data = fetch_crypto_data(initial_pair, period='5d',
+                                     interval='1h')
+
+    window = GUI.create_main_window(initial_data, crypto_pairs)
     window.mainloop()
 
 if __name__ == "__main__":
