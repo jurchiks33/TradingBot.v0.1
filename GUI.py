@@ -44,6 +44,11 @@ def create_main_window(crypto_data, crypto_pairs):
     main_frame.rowconfigure(3, weight=1) 
 
     #Addin listbox to hold crypto pairs.
+    listbox_frame = ttk.Frame(main_frame)
+    listbox_frame.grid(row=0, column=4, rowspan=4, sticky='nsew', padx=(5, 0))
+    main_frame.columnconfigure(4, weight=1)
+
+    
 
     #Chart Area.
     chart_frame = ttk.Frame(main_frame, borderwidth=2, relief="sunken")
