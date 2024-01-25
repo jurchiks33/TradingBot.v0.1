@@ -39,13 +39,15 @@ def create_main_window(crypto_data):
     #Chart Area.
     chart_frame = ttk.Frame(main_frame, borderwidth=2, relief="sunken")
     chart_frame.grid(row=0, column=1, columnspan=2, pady=5, padx=5, sticky="nsew")
-    chart_frame.grid_propagate(False)
 
-    chart_width = int(window_width * 0.7)
-    chart_height = int(window_height * 0.5)
+    create_chart_frame(chart_frame, crypto_data)
+    # chart_frame.grid_propagate(False)
 
-    create_chart_frame(chart_frame, crypto_data,
-                                      chart_width, chart_height)
+    # chart_width = int(window_width * 0.7)
+    # chart_height = int(window_height * 0.5)
+
+    # create_chart_frame(chart_frame, crypto_data,
+    #                                   chart_width, chart_height)
 
     # chart_frame.config(width=window_width*0.7, height=window_height*0.5)
     # chart_label = ttk.Label(chart_frame, text="Chart Area", background="lightgray")
