@@ -3,7 +3,12 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
 
 def update_chart(chart_frame, new_data):
+    #Clear existing chart in the chart_frame.
+    for widget in chart_frame.winfo_children():
+        widget.destroy()
     
+    #Create a new chart with new data.
+    create_chart_frame(chart_frame, new_data)
 
 def create_chart_frame(parent, data):
     # Set style for the plot
