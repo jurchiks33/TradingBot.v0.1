@@ -23,9 +23,7 @@ def create_main_window(crypto_data):
     #Main frame.
     main_frame = ttk.Frame(root, padding="10")
     main_frame.pack(fill='both', expand=True)
-    # main_frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
-    # main_frame.rowconfigure(0, weight=1)
-    # for i in range(4):
+
     # Configure the weight of rows and columns
     main_frame.columnconfigure(0, weight=1)
     main_frame.columnconfigure(1, weight=1)
@@ -41,17 +39,6 @@ def create_main_window(crypto_data):
     chart_frame.grid(row=0, column=1, columnspan=2, pady=5, padx=5, sticky="nsew")
 
     create_chart_frame(chart_frame, crypto_data)
-    # chart_frame.grid_propagate(False)
-
-    # chart_width = int(window_width * 0.7)
-    # chart_height = int(window_height * 0.5)
-
-    # create_chart_frame(chart_frame, crypto_data,
-    #                                   chart_width, chart_height)
-
-    # chart_frame.config(width=window_width*0.7, height=window_height*0.5)
-    # chart_label = ttk.Label(chart_frame, text="Chart Area", background="lightgray")
-    # chart_label.place(relx=0.5, rely=0.5, anchor="center")
 
     #Control Buttons.
     start_button = ttk.Button(main_frame, text="Start")
