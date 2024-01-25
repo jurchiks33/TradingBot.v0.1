@@ -1,8 +1,17 @@
 import tkinter as tk
 from tkinter import ttk
 from chart_plotter import create_chart_frame
+from tkinter import Listbox, Scrollbar, SINGLE
 
-def create_main_window(crypto_data):
+def update_chart_frame_selection(event, listbox, main_frame):
+    selection = listbox.get(listbox.curselection())
+    print(f"Fetching data for {selection}")
+    #Here will be data fetching and chart updating.
+
+
+
+
+def create_main_window(crypto_data, crypto_pairs):
     root = tk.Tk()
     root.title("Trading Bot")
 
@@ -33,6 +42,8 @@ def create_main_window(crypto_data):
     main_frame.rowconfigure(1, weight=1)
     main_frame.rowconfigure(2, weight=1) 
     main_frame.rowconfigure(3, weight=1) 
+
+    #Addin listbox to hold crypto pairs.
 
     #Chart Area.
     chart_frame = ttk.Frame(main_frame, borderwidth=2, relief="sunken")
