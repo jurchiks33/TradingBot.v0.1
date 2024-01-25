@@ -2,6 +2,9 @@ import mplfinance as mpf
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
 
+def update_chart(chart_frame, new_data):
+    
+
 def create_chart_frame(parent, data):
     # Set style for the plot
     mpf_style = mpf.make_mpf_style(base_mpf_style='charles', rc={'font.size':8})
