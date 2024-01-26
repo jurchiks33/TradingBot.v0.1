@@ -4,9 +4,12 @@ from chart_plotter import create_chart_frame
 from tkinter import Listbox, Scrollbar, SINGLE
 
 def update_chart_frame_selection(event, listbox, main_frame):
-    selection = listbox.get(listbox.curselection())
-    print(f"Fetching data for {selection}")
-    #Here will be data fetching and chart updating.
+    selection_index = listbox.curselection()
+    if not selection_index:
+        return
+    selection_pair = listbox.get(selection_index)
+
+    
 
 
 
