@@ -9,8 +9,11 @@ def update_chart_frame_selection(event, listbox, main_frame):
         return
     selection_pair = listbox.get(selection_index)
 
-    
+    #Fetch data for selected pair.
+    new_data = fetch_crypto_data(selection_pair, period='5d', interval='1h')
 
+    #update chart with new data.
+    update_chart(main_frame, new_data)
 
 
 
